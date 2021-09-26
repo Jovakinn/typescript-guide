@@ -1,6 +1,12 @@
 {
   "name": "ts-project",
   "version": "1.0.0",
-  "dependencies": {
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.2.1"
+  },
+  "scripts": {
+    "dev": "nodemon --config nodemon.json server/appServer.ts",
+    "dev:debug": "nodemon --config nodemon.json --inspect-brk server/appServer.ts"
   }
 }
