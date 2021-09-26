@@ -6,7 +6,7 @@
     "ts-node": "^10.2.1"
   },
   "scripts": {
-    "dev": "nodemon --config nodemon.json server/appServer.ts",
-    "dev:debug": "nodemon --config nodemon.json --inspect-brk server/appServer.ts"
+    "dev": "nodemon --config nodemon.json src/server/appServer.ts",
+    "dev:debug": "nodemon --config nodemon.json --inspect-brk src/server/appServer.ts"
   }
 }
