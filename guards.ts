@@ -1,9 +1,11 @@
-function strip(x: string | number) {
+function strip(x: string | number): number | string {
     if (typeof x === 'number') {
         return x.toFixed(2);
     }
     return x.trim()
 }
+console.log(strip("  1  1   "))
+console.log(strip(777))
 
 class MyResponse {
     header = 'response header'
