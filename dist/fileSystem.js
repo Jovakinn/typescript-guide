@@ -33,3 +33,4 @@ fs.writeFile('importantFiles/newFile.txt', 'Lets gooo', (err => {
     if (err)
         console.log(err);
 }));
+//# sourceMappingURL=fileSystem.js.map

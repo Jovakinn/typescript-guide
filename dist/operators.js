@@ -4,3 +4,4 @@ const myAge = 'age';
 let key = 'name';
 key = 'age';
 let user1 = 'name';
+//# sourceMappingURL=operators.js.map

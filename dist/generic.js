@@ -6,3 +6,4 @@ function reverse(array) {
 }
 console.log(reverse(arrayOfNumbers));
 console.log(reverse(arrayOfStrings));
+//# sourceMappingURL=generic.js.map

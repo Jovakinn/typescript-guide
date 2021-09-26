@@ -20,3 +20,4 @@ class Human {
     }
 }
 exports.Human = Human;
+//# sourceMappingURL=Human.js.map

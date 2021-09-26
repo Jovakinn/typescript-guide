@@ -37,3 +37,4 @@ function setAlertType(type) {
 setAlertType('success');
 setAlertType('warning');
 setAlertType('danger');
+//# sourceMappingURL=guards.js.map

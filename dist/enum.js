@@ -16,3 +16,4 @@ const memberShip = Membership.Platinum;
 console.log(memberShip.toString());
 const social = SocialMedia.INSTAGRAM;
 console.log(social);
+//# sourceMappingURL=enum.js.map

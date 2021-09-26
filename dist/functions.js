@@ -20,3 +20,4 @@ function position(a, b) {
 console.log('Empty: ', position());
 console.log('1 param: ', position(121));
 console.log('2 param: ', position(122, 123));
+//# sourceMappingURL=functions.js.map

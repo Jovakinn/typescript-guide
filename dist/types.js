@@ -65,3 +65,4 @@ const id1 = 12345;
 const id2 = "12345";
 const id3 = true;
 console.log(id1 + " " + id2 + " " + id3);
+//# sourceMappingURL=types.js.map

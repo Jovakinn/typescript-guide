@@ -28,3 +28,4 @@ fs.writeFile('importantFiles/mainJSON.json', JSON.stringify(Alex), (err) => {
         console.log('Error');
 });
 console.log(mainJSON);
+//# sourceMappingURL=app.js.map

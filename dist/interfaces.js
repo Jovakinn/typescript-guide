@@ -86,3 +86,4 @@ const css = {
     marginTop: "2px",
     borderRadius: '5px'
 };
+//# sourceMappingURL=interfaces.js.map

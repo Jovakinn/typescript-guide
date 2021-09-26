@@ -44,3 +44,4 @@ class AppComponent extends Component {
         console.log("Component of render");
     }
 }
+//# sourceMappingURL=classes.js.map
