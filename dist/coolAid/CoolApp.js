@@ -6,6 +6,12 @@ class Person {
 }
 const max = new Person("Max");
 const btn = document.querySelector('#btn');
+let anyFlag;
+function logINfo(data) {
+    console.log(data);
+    anyFlag = true;
+    console.log(anyFlag);
+}
 if (btn) {
     btn.addEventListener('click', () => {
         console.log('Btn was clicked!');

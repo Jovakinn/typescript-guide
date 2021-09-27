@@ -2,7 +2,8 @@ class Person {
     constructor(private FirstName: string) {}
 }
 const max = new Person("Max")
-const btn: Element | null = document.querySelector('#btn')
+let btn: Element | null;
+btn = document.querySelector('#btn');
 
 let anyFlag
 
