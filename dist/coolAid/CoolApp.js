@@ -5,7 +5,8 @@ class Person {
     }
 }
 const max = new Person("Max");
-const btn = document.querySelector('#btn');
+let btn;
+btn = document.querySelector('#btn');
 let anyFlag;
 function logINfo(data) {
     console.log(data);

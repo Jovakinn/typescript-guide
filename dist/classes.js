@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Car = void 0;
 class Typescript {
     constructor(version) {
         this.version = version;
@@ -14,6 +16,7 @@ class Car {
         this.year = numberOfWheels;
     }
 }
+exports.Car = Car;
 //====================
 class Animal {
     constructor(voice, color) {
