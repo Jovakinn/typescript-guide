@@ -19,3 +19,16 @@ const merged3 = mergeObjects({fieldOfStudy: "Computer Science"}, {codeOfSpeciali
 console.log(merged1.name.trim().toUpperCase())
 console.log(merged2)
 console.log(merged3.codeOfSpeciality + " " + merged3.fieldOfStudy)
+
+interface ILength {
+    length: number
+}
+
+function withCount<T extends ILength>(value: T): {value: T, count: string}{
+    return {
+        value,
+        count: 'In this object ${value.length} symbols'
+    }
+}
+console.log(withCount("Howdy partner!"))
+
