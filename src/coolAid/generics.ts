@@ -1,7 +1,9 @@
+import {Car} from "../classes";
+
 const promise = new Promise<number>(resolve => {
     setTimeout(() => {
         resolve(2.7218281828)
-    }, 5000)
+    }, 1000)
 })
 
 promise.then(data => {
@@ -32,3 +34,50 @@ function withCount<T extends ILength>(value: T): {value: T, count: string}{
 }
 console.log(withCount("Howdy partner!"))
 
+class Collection<T> {
+    private _items: T[] = []
+
+    constructor(items: T[]) {
+        this._items = items;
+    }
+
+    add(item: T){
+        this._items.push(item)
+    }
+
+    remove(item: T){
+        this._items = this._items.filter(i => i != item)
+    }
+
+    getItems(): T[] {
+        return this._items
+    }
+}
+
+const strings = new Collection(['I', 'am', 'strings'])
+strings.add('!!!')
+strings.remove('am')
+console.log(strings)
+
+const numbers = new Collection([1, 2, 3])
+numbers.add(4)
+numbers.remove(2)
+console.log(numbers)
+
+function createAndValidate(model: string, year: number): Car {
+    const car: Partial<Car> ={}
+    if (model.length > 3) {
+        car.model = model
+    }
+    if (year > 2000) {
+        car.year = year
+    }
+
+    return car as Car
+}
+
+const cars: Readonly<Array<string>> = ['Ford', 'Daewoo']
+const ford: Car = {
+    model: 'Ford',
+    year:  2021
+}

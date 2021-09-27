@@ -9,13 +9,13 @@ class Typescript {
     }
 }
 
-class Car {
-    readonly model: string
-    readonly numberOfWheels: number = 4
+export class Car {
+    model: string
+    year: number = 4
 
     constructor(model: string, numberOfWheels: number) {
         this.model = model;
-        this.numberOfWheels = numberOfWheels;
+        this.year = numberOfWheels;
     }
 }
 

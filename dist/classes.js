@@ -9,9 +9,9 @@ class Typescript {
 }
 class Car {
     constructor(model, numberOfWheels) {
-        this.numberOfWheels = 4;
+        this.year = 4;
         this.model = model;
-        this.numberOfWheels = numberOfWheels;
+        this.year = numberOfWheels;
     }
 }
 //====================
