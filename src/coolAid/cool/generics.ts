@@ -1,4 +1,4 @@
-import {Car} from "../classes";
+import {Car} from "../../classes";
 
 const promise = new Promise<number>(resolve => {
     setTimeout(() => {
@@ -66,18 +66,18 @@ console.log(numbers)
 
 function createAndValidate(model: string, year: number): Car {
     const car: Partial<Car> ={}
-    if (model.length > 3) {
+    if (model.length >= 3) {
         car.model = model
     }
-    if (year > 2000) {
+    if (year >= 2000) {
         car.year = year
     }
 
     return car as Car
 }
 
-const cars: Readonly<Array<string>> = ['Ford', 'Daewoo']
 const ford: Car = {
     model: 'Ford',
     year:  2021
 }
+console.log(createAndValidate(ford.model, ford.year))
