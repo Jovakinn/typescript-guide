@@ -95,3 +95,13 @@ const id3: ID = true;
 console.log(id1 + " " + id2 + " " + id3)
 
 type SomeType = string | null | undefined
+
+function getUserOnlineMessage(numberOfOnlineUsers: number) {
+    if (numberOfOnlineUsers) {
+        console.log('There are ${numberOfOnlineUsers} )')
+    } else {
+        console.log('there are no one')
+    }
+}
+
+getUserOnlineMessage(122);
