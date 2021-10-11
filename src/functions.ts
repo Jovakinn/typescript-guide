@@ -83,7 +83,6 @@ function SchoolarGreate() {
 function position(): MyPosition
 function position(a: number): MyPositionWithDefault
 function position(a: number, b: number): MyPosition
-
 function position(a?: number, b?: number) {
     if (!a && !b) {
         return {x: undefined, y: undefined}
@@ -99,7 +98,26 @@ function position(a?: number, b?: number) {
 
     return {x: a, y: b}
 }
+function greetMyFavouriteComrade(person: string, date: Date) {
+    console.log(`Hello ${person}, today is ${date.toDateString()}`)
+}
+type Point = {
+    x: number;
+    y: number;
+};
+
+function printCord(pt: Point) {
+    console.log("The coordinate's x value is " + pt.x);
+    console.log("The coordinate's y value is " + pt.y);
+}
+let point: Point = {
+    x: 1,
+    y: 2
+}
+
 console.log('Empty: ', position())
 console.log('1 param: ', position(121))
 console.log('2 param: ', position(122, 123))
+printCord(point)
 SchoolarGreate();
+greetMyFavouriteComrade("Max", new Date())
