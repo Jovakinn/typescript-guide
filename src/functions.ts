@@ -115,9 +115,46 @@ let point: Point = {
     y: 2
 }
 
+function printName(obj: { first: string; last?: string }) {
+    console.log(`${obj.first}  ${obj.last}`);
+}
+
+function printId(id: number | string) {
+    if (typeof id === "string")
+        console.log(id.trim().toUpperCase())
+    else
+        console.log(id)
+}
+
+function welcomePeople(x: string[] | string) {
+    if (Array.isArray(x))
+        console.log("Hello, " + x.join(" and "));
+    else
+        console.log("Welcome lone travelers " + x)
+}
+
+function printAll(strs: string | string[] | null) {
+    if (strs && typeof strs === "object"){
+        for (const s of strs)
+            console.log(s);
+    } else if (typeof strs === "string")
+        console.log(strs);
+}
+
+function multiplyAll(
+    values: number[] | undefined,
+    factor: number
+): number[] | undefined {
+   if (!values)
+       return values;
+   else
+       return values.map((x) => x * factor);
+}
+
 console.log('Empty: ', position())
 console.log('1 param: ', position(121))
 console.log('2 param: ', position(122, 123))
 printCord(point)
 SchoolarGreate();
 greetMyFavouriteComrade("Max", new Date())
+printName({first: "Jack", last: "Black"});
