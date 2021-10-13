@@ -151,6 +151,29 @@ function multiplyAll(
        return values.map((x) => x * factor);
 }
 
+function typeNarrowingExample(x: string | number, y: string | boolean) {
+    if (x === y) {
+        x.toUpperCase();
+        y.toLowerCase();
+    } else {
+        console.log(x);
+        console.log(y);
+    }
+}
+
+interface Container {
+    value: number | null | undefined;
+}
+
+function multiplyValues(container: Container, factor: number) {
+    if (container.value != null) {
+        console.log(container.value);
+        container.value *= factor;
+    }
+}
+
+
+
 console.log('Empty: ', position())
 console.log('1 param: ', position(121))
 console.log('2 param: ', position(122, 123))
