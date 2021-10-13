@@ -184,6 +184,33 @@ function move(animal: Fish | Bird | Human) {
     }
 }
 
+function logValue(x: Date | string) {
+    if (x instanceof Date)
+        console.log(x.toUTCString());
+    else
+        console.log(x.toUpperCase());
+}
+
+function example() {
+    let x: string | number | boolean;
+    x = Math.random() < 0.5;
+
+    console.log(x);
+
+    if (Math.random() < 0.5) {
+        x = "hello";
+        console.log(x);
+    } else {
+        x = 100;
+        console.log(x);
+    }
+    return x;
+}
+
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (pet as Fish).swim !== undefined;
+}
+
 
 console.log('Empty: ', position())
 console.log('1 param: ', position(121))
