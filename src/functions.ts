@@ -253,3 +253,41 @@ let squareObject: Square = {
 
 console.log("Area of circle: " + getAreaOfObject(circleObject));
 console.log("Area of square: " + getAreaOfObject(squareObject));
+
+type GreeterFunction = (a: string) => void;
+function greeter(fn: GreeterFunction) {
+    for (let i = 0; i < 3; i++) {
+        fn("Hello TS!")
+    }
+}
+
+function printToConsole(s: string) {
+    console.log(s);
+}
+greeter(printToConsole);
+
+let list = [4, 5, 6]
+for (let listKey in list) {
+    console.log(listKey);
+}
+for (let number of list) {
+    console.log(number)
+}
+
+let pets = new Set(["Dog", "Car", "Hamster"])
+for (let pet of pets) {
+    console.log(pet); // "Cat", "Dog", "Hamster"
+}
+
+function getFirstElementOfArray<Type> (array: Type[]): Type | undefined {
+    return array[0];
+}
+
+const s = getFirstElementOfArray<string>(["s","o","s"]);
+console.log(s);
+
+function map<Input, Output>(array: Input[], func: (arg: Input) => Output) : Output[] {
+    return array.map(func);
+}
+const parsed = map<string, number>(["1", "2", "3"], (n) => parseInt(n));
+console.log(parsed);
