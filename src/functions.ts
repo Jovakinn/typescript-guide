@@ -219,3 +219,37 @@ printCord(point)
 SchoolarGreate();
 greetMyFavouriteComrade("Max", new Date())
 printName({first: "Jack", last: "Black"});
+
+interface Circle {
+    kind: "circle";
+    radius: number;
+}
+
+interface Square {
+    kind: "square";
+    sideLength: number;
+}
+
+type ShapeOfObject = Circle | Square;
+
+function getAreaOfObject(shapeOfObject: ShapeOfObject) {
+    switch(shapeOfObject.kind) {
+        case "circle":
+            return Math.PI * shapeOfObject.radius ** 2;
+        case "square":
+            return shapeOfObject.sideLength ** 2;
+    }
+}
+
+let circleObject: Circle = {
+    kind: "circle",
+    radius: 4
+}
+
+let squareObject: Square = {
+    kind: "square",
+    sideLength: 4
+}
+
+console.log("Area of circle: " + getAreaOfObject(circleObject));
+console.log("Area of square: " + getAreaOfObject(squareObject));
