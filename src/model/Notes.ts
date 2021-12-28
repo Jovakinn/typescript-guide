@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import chalk from 'chalk';
 
 const getNotes = function (title: unknown, body: unknown) {
     return "Your notes...";
@@ -16,21 +17,25 @@ export const addNote = function (title: unknown, body: unknown){
             body: body,
         })
         saveNotes(notes);
-        console.log("New note added!");
+        console.log(chalk.greenBright("New note added!"));
     } else {
-        console.log("Note title taken!");
+        console.log(chalk.redBright("Note title taken!"));
     }
 }
 
 export const removeNote = function (title: unknown) {
     const notes = loadNotes();
-    const duplicateNotes = notes.filter(function (note: any) {
+    const notesToKeep = notes.filter(function (note: any) {
         return note.title !== title;
     })
-
-    saveNotes(duplicateNotes);
-    console.log("Note was successfully deleted!");
+    if (notes.length === notesToKeep.length) {
+        console.log(chalk.redBright("No note was deleted"));
+    } else {
+        saveNotes(notesToKeep);
+        console.log(chalk.greenBright("Note was successfully deleted!"));
+    }
 }
+
 
 const saveNotes = function (notes: any) {
     const dataJSON = JSON.stringify(notes);
