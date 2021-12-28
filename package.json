@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/validator": "^13.7.1",
+    "@types/yargs": "^17.0.8",
     "nodemon": "^2.0.13",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.3"
@@ -12,6 +14,8 @@
     "dev:debug": "nodemon --config nodemon.json --inspect-brk src/server/appServer.ts"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "validator": "^13.7.0",
+    "yargs": "^17.3.1"
   }
 }

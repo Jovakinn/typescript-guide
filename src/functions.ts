@@ -291,3 +291,5 @@ function map<Input, Output>(array: Input[], func: (arg: Input) => Output) : Outp
 }
 const parsed = map<string, number>(["1", "2", "3"], (n) => parseInt(n));
 console.log(parsed);
+
+console.log("Hello World!")
