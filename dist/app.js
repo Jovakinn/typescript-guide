@@ -1,31 +1,57 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs = __importStar(require("fs"));
-const Human_1 = require("./model/Human");
-const mainJSON = __importStar(require("./importantFiles/mainJSON.json"));
-const Alex = new Human_1.Human("Alex", 122);
-fs.writeFile('importantFiles/mainJSON.json', JSON.stringify(Alex), (err) => {
-    if (err)
-        console.log('Error');
+const yargs_1 = __importDefault(require("yargs"));
+const Notes_1 = require("./model/Notes");
+yargs_1.default.version('1.1.0');
+yargs_1.default.command({
+    command: "add",
+    describe: "Add a new note",
+    builder: {
+        title: {
+            describe: "Note title",
+            demandOption: true,
+            type: 'string',
+        },
+        body: {
+            describe: "Note body",
+            demandOption: true,
+            type: 'string',
+        }
+    },
+    handler: (argv) => {
+        (0, Notes_1.addNote)(argv.title, argv.body);
+    }
 });
-console.log(mainJSON);
+yargs_1.default.command({
+    command: "remove",
+    describe: "Remove note",
+    builder: {
+        title: {
+            describe: "Note title",
+            demandOption: true,
+            type: 'string',
+        }
+    },
+    handler: (argv) => {
+        (0, Notes_1.removeNote)(argv.title);
+    }
+});
+yargs_1.default.command({
+    command: "list",
+    describe: "List of notes",
+    handler: args => {
+        console.log("Listing a notes !!!");
+    }
+});
+yargs_1.default.command({
+    command: "read",
+    describe: "Read note",
+    handler: args => {
+        console.log("Reading a note !!!");
+    }
+});
+yargs_1.default.parse();
 //# sourceMappingURL=app.js.map

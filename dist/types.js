@@ -65,4 +65,13 @@ const id1 = 12345;
 const id2 = "12345";
 const id3 = true;
 console.log(id1 + " " + id2 + " " + id3);
+function getUserOnlineMessage(numberOfOnlineUsers) {
+    if (numberOfOnlineUsers) {
+        console.log('There are ${numberOfOnlineUsers} )');
+    }
+    else {
+        console.log('there are no one');
+    }
+}
+getUserOnlineMessage(122);
 //# sourceMappingURL=types.js.map
