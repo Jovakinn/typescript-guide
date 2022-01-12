@@ -1,3 +1,5 @@
+import e from "express";
+
 const square = function (x: number): number {
     return x * x;
 }
@@ -27,9 +29,6 @@ function returnSomething (name: string): number | undefined {
     return name.length * 31 + 5;
 }
 
-const Name: string = "John";
-console.log(returnSomething(Name));
-
 const tasks = {
     tasks: [{
         text: 'Grocery shopping',
@@ -46,9 +45,69 @@ const tasks = {
     }
 }
 
-const colorer = (s: string, color: number) => `\x1b[3${color}m${s}\x1b[0m`;
-console.log(colorer("String", 2))
-console.log(obj.foo("Avrelius"))
-eventTask.printGuestList()
-console.log(tasks.getTasksToDo())
-console.log(square(3));
+const COLORS: string[] = [
+    "black", "white", "green", "yellow", "orange",
+]
+
+const colorer = (s: string, color: number): string => `\x1b[3${color}m${s}\x1b[0m`;
+
+const colorize = (name: string) => {
+    let result = '';
+    const letters = name.split('');
+    let color = 1;
+    for(const letter of letters) {
+        result += colorer(letter, color++);
+        if (color > COLORS.length) color = 1;
+    }
+    return result;
+};
+
+const greetings = (name: string): string => {
+    return name.includes('Augustus') ? `Greetings,  ${colorize(name)}!` : `Hello, ${name}!`;
+};
+
+const fullName = 'Marcus Aurelius Antonius Augustus';
+console.log(greetings(fullName));
+
+
+
+const adder = (initial: number = 0) => {
+    return {
+        value: initial,
+        steps: [initial],
+        add: function (value: number) {
+            this.steps.push(value);
+            this.value += value;
+            return this;
+        }
+    };
+};
+// usage
+{
+    const {value, steps} = adder(5).add(-8).add(11);
+    console.log(value);
+    const [a, b, c] = steps;
+    console.log(a, b, c);
+}
+
+const Adder = class {
+    public  steps: number[];
+    public value: number;
+
+    constructor(initial: number = 0) {
+        this.steps = [initial];
+        this.value = initial;
+    }
+
+    public add(value: number): this {
+        this.steps.push(value);
+        this.value += value;
+        return this;
+    }
+}
+
+const {value, steps} = new Adder(5).add(-8).add(11);
+console.log(value);
+const [a, b, c] = steps;
+console.log(a, b, c);
+
