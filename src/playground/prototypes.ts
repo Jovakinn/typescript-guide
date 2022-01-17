@@ -69,3 +69,18 @@ const curry = (fn: any) => (...args: any) => {
 const f = curry(sum4);
 const test = f(1)(2)(3)(4);
 console.log(test);
+
+
+const logger = console.log;
+
+function identity<T> (arg: T): T {
+    return arg;
+}
+
+const result = identity<string>('hello')
+logger(result);
+
+// destructive assignment
+const {sin, PI} = Math;
+logger(sin(1));
+logger(PI);
