@@ -16,7 +16,9 @@
     "dev:debug": "nodemon --config nodemon.json --inspect-brk src/server/appServer.ts"
   },
   "dependencies": {
+    "@types/mongodb": "^4.0.7",
     "express": "^4.17.1",
+    "mongodb": "^4.3.0",
     "validator": "^13.7.0",
     "yargs": "^17.3.1"
   }
