@@ -84,3 +84,11 @@ logger(result);
 const {sin, PI} = Math;
 logger(sin(1));
 logger(PI);
+
+const before = new Date('January 5, 2004 14:00:00');
+const now = new Date();
+const difference = now.getTime() - before.getTime();
+const minutes = Math.round(difference / 1000 / 60);
+const hours = Math.round(minutes / 60);
+
+logger(hours, minutes);
