@@ -1,4 +1,6 @@
 import { create } from "domain";
+import * as fs from "fs";
+import path from "path";
 
 function Point(this: any, x: number, y: number) {
     this.x = x;
@@ -92,3 +94,23 @@ const minutes = Math.round(difference / 1000 / 60);
 const hours = Math.round(minutes / 60);
 
 logger(hours, minutes);
+
+const pos = (row: number, column: number): void => logger(`\x1b[${row};${column}`);
+
+{
+    const name: string = 'Maksym';
+    for (let i = 0; i < name.trim().length; i++) {
+        logger(i, name[i]);
+    }
+}
+
+async function readingDirectory(directory: string) {
+    const fileNames = await fs.promises.readdir(directory);
+    for (let file of fileNames) {
+        const absolutePath = path.join(directory, file);
+        logger(absolutePath);
+
+        const data = await fs.promises.readFile(absolutePath);
+        logger(data);
+    }
+}
