@@ -113,3 +113,4 @@ async function readingDirectory(directory: string) {
         logger(data);
     }
 }
+
