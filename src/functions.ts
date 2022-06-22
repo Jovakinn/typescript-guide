@@ -283,7 +283,7 @@ function getFirstElementOfArray<Type> (array: Type[]): Type | undefined {
     return array[0];
 }
 
-const s = getFirstElementOfArray<string>(["s","o","s"]);
+let s = getFirstElementOfArray<string>(["s","o","s"]);
 console.log(s);
 
 function map<Input, Output>(array: Input[], func: (arg: Input) => Output) : Output[] {

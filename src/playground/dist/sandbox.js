@@ -1,25 +1,35 @@
 "use strict";
 exports.__esModule = true;
-var chalk_1 = require("chalk");
-var crypto_1 = require("crypto");
-var fs = require("fs");
+
+const chalk_1 = require("chalk");
+const crypto_1 = require("crypto");
+
+const fs = require("fs");
+
 function greet(name) {
     console.log(chalk_1["default"].yellow("Hello " + name + "!"));
 }
-var speak = function (name) {
+
+const speak = function (name) {
     console.log(chalk_1["default"].yellow("Hello " + name + "!"));
 };
-var calcAreaOfCircle = function (radius) { return Math.PI * Math.pow(radius, 2); };
-var bill = function (products, tax) {
-    var total = 0;
-    for (var i = 0; i < products.length; i++) {
+
+const calcAreaOfCircle = function (radius) {
+    return Math.PI * Math.pow(radius, 2);
+};
+
+const bill = function (products, tax) {
+    let total = 0;
+    for (let i = 0; i < products.length; i++) {
         total += products[i] + products[i] * tax;
     }
     return total;
 };
-var productsToCalculate = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-var taxToCalculate = 750;
-var res = bill(productsToCalculate, taxToCalculate);
+
+const productsToCalculate = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const taxToCalculate = 750;
+const res = bill(productsToCalculate, taxToCalculate);
+
 greet("Max");
 speak(("Max"));
 console.log(chalk_1["default"].redBright(calcAreaOfCircle(5)));
@@ -77,12 +87,4 @@ function getFilesList(pathToDir, filesList) {
     }
     var initialList = fs.readdirSync(pathToDir);
     console.log(initialList);
-}
-getFilesList('./');
-function arrayToObject(array) {
-    while (array.length !== 0) {
-        var index = 0;
-        var obj = {};
-        obj.add(array[index]) = array[index];
-    }
 }

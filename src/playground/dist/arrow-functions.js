@@ -1,10 +1,10 @@
 "use strict";
 exports.__esModule = true;
-var sandbox_1 = require("./sandbox");
-var square = function (x) {
+const sandbox_1 = require("./sandbox");
+const square = function (x) {
     return x * x;
 };
-var eventTask = {
+const eventTask = {
     name: "Birthday Party",
     guestLists: ['Andrew', "Maxim", "Ivan"],
     printGuestList: function () {
@@ -15,17 +15,19 @@ var eventTask = {
         });
     }
 };
-var obj = {
+const obj = {
     name: "object",
     age: 1,
     foo: function (name) {
         return "Ave, " + name;
     }
 };
+
 function returnSomething(name) {
     return name.length * 31 + 5;
 }
-var Name = "John";
+
+const Name = "John";
 console.log(returnSomething(Name));
 var tasks = {
     tasks: [{

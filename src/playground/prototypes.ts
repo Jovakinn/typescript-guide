@@ -1,8 +1,5 @@
-import { create } from "domain";
 import * as fs from "fs";
 import path from "path";
-import * as readline from "readline";
-import {Properties} from "./Properties";
 
 function Point(this: any, x: number, y: number) {
     this.x = x;
@@ -116,19 +113,3 @@ async function readingDirectory(directory: string) {
         logger(data);
     }
 }
-
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-rl.question('Secret word?', (answer: string) =>{
-    if (answer === Properties.SECRET_WORD) {
-        console.table(Properties.objects);
-        rl.close()
-    } else {
-        console.error("Incorrect answer")
-    }
-});
-
