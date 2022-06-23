@@ -13,9 +13,18 @@
   },
   "scripts": {
     "dev": "nodemon --config nodemon.json src/server/appServer.ts",
-    "dev:debug": "nodemon --config nodemon.json --inspect-brk src/server/appServer.ts"
+    "dev:debug": "nodemon --config nodemon.json --inspect-brk src/server/appServer.ts",
+    "build": "node_modules/.bin/webpack --mode production",
+    "serve": "webpack-dev-server --mode development"
   },
   "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
     "@types/mongodb": "^4.0.7",
     "express": "^4.17.1",
     "firebase": "^9.8.3",
