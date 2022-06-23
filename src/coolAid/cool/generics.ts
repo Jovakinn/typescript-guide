@@ -1,4 +1,4 @@
-import {Car} from "../../classes";
+import {Car} from "../../examples/classes";
 
 const promise = new Promise<number>(resolve => {
     setTimeout(() => {
