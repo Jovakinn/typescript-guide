@@ -1,5 +1,5 @@
 import yargs, {argv} from "yargs";
-import {addNote, removeNote} from './model/Notes';
+import {addNote, removeNote} from './Notes';
 
 yargs.version('1.1.0');
 

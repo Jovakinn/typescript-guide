@@ -11,5 +11,6 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="firebase-firestore" level="application" />
     <orderEntry type="library" name="firebase-app" level="application" />
+    <orderEntry type="library" name="date_fns" level="application" />
   </component>
 </module>
