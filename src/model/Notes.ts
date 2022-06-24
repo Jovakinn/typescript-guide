@@ -1,17 +1,24 @@
 import * as fs from "fs";
 import chalk from 'chalk';
 
-const getNotes = function (title: unknown, body: unknown) {
+const getNotes = (title: unknown, body: unknown) => {
     return "Your notes...";
 }
 
-export const addNote = function (title: unknown, body: unknown){
+const listNoted = () => {
     const notes = loadNotes();
-    const duplicateNotes = notes.filter(function (note: any) {
-        return note.title === title;
+    console.log(chalk.inverse('Your notes!'));
+    notes.forEach((note: any) => {
+        console.log(note.title)
     })
+}
 
-    if (duplicateNotes.length === 0) {
+export const addNote = (title: unknown, body: unknown) => {
+    const notes = loadNotes();
+    const duplicateNotes = notes.filter((note: any) => note.title === title);
+    const duplicateNote = notes.find((note: any) => note.title === title);
+
+    if (!duplicateNote) {
         notes.push({
             title: title,
             body: body,
@@ -23,7 +30,17 @@ export const addNote = function (title: unknown, body: unknown){
     }
 }
 
-export const removeNote = function (title: unknown) {
+const readNote = (title: string) => {
+    const notes = loadNotes();
+    const note = notes.find((note: any) => note.title === title);
+    if (!note) {
+        console.log(chalk.red.inverse('Note not found!'));
+    }
+    console.log(chalk.inverse(note.title));
+    console.log(note.body);
+}
+
+export const removeNote = (title: unknown) => {
     const notes = loadNotes();
     const notesToKeep = notes.filter(function (note: any) {
         return note.title !== title;
@@ -37,12 +54,12 @@ export const removeNote = function (title: unknown) {
 }
 
 
-const saveNotes = function (notes: any) {
+const saveNotes = (notes: any) => {
     const dataJSON = JSON.stringify(notes);
     fs.writeFileSync('notesList.json', dataJSON);
 }
 
-export const loadNotes = function () {
+export const loadNotes = () => {
     try {
         const dataBuffer = fs.readFileSync('notesList.json');
         const dataJSON = dataBuffer.toString();
